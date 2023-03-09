@@ -75,10 +75,16 @@ const { title } = Astro.props;
     }
   }
   main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 200vh;
     margin: auto;
     padding: 1.5rem;
     max-width: 60ch;
+  }
+  main * {
+    margin-bottom: 2rem;
   }
   h1 {
     font-size: 3rem;

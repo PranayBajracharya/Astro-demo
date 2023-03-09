@@ -2,9 +2,7 @@
   let count = 0;
 
   const handleCount = () => {
-    setCount((c) => {
-      return c++;
-    });
+    count++;
   };
   // console.log("This is a svelte component");
 </script>
