@@ -1,0 +1,31 @@
+---
+import Counter from "../components/Counter.svelte";
+import Footer from "../components/Footer.svelte";
+import Main from "../components/Main.astro";
+import Nav from "../components/Nav";
+import Layout from "../layouts/Layout.astro";
+
+const hidden = "yes";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="nav-container">
+    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+    <Nav />
+  </div>
+  <main>
+    <Counter />
+    <Main />
+    <p class:list={["idk", { hidden: hidden === "yes" }]}>Am I hidden?</p>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+  /* h1 {
+    color: red;
+  } */
+</style>

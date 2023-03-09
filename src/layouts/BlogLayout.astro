@@ -1,0 +1,33 @@
+---
+import Footer from "../components/Footer.svelte";
+import Nav from "../components/Nav";
+import Layout from "./Layout.astro";
+
+type Props = {
+  frontmatter: {
+    title: string;
+    author: string;
+    date: string;
+  };
+};
+
+const { frontmatter } = Astro.props;
+const { title, author, date } = frontmatter;
+---
+
+<Layout title="Blogs">
+  <div class="nav-container">
+    <h1>Welcome to <span class="text-gradient">BLogs</span></h1>
+    <Nav />
+  </div>
+  <main>
+    <div>
+      <h2 style={{ margin: 0 }}>
+        {title}
+      </h2>
+      by {author} ({new Date(date).toDateString()})
+    </div>
+    <slot />
+  </main>
+  <Footer />
+</Layout>
